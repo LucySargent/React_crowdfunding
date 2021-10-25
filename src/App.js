@@ -6,12 +6,17 @@ import HomePage from "./pages/HomePage";
 import ProjectPage from "./pages/ProjectPage";
 import LoginPage from "./pages/LoginPage";
 
-
 function App() {
   return (
     <Router>
       <div>
         <Nav />
+        <div className="message">
+          <h2>About Beebay...</h2>
+        </div>
+        <div>
+          <button className="btn">Start a Beebay Project</button>
+        </div>
 
         <Switch>
           {/* url param "id" */}
@@ -20,11 +25,14 @@ function App() {
           </Route>
           <Route path="/login">
             <LoginPage />
-            </Route>
+          </Route>
           <Route path="/">
             <HomePage />
           </Route>
         </Switch>
+      </div>
+      <div>
+      <button className="btn">See more projects</button>
       </div>
     </Router>
   );

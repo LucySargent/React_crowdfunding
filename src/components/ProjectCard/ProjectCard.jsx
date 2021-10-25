@@ -10,9 +10,11 @@ function ProjectCard(props) {
       {/* direct project cards to specific project pages */}
       <Link to={`/project/${projectData.id}`}>
         <img src={projectData.image} />
-        <h3>{projectData.title}</h3>
-        <h4>{projectData.description}</h4>
-        <h4>status: {projectData.status}</h4>
+        <h3 className="project-card-text">{projectData.title}</h3>
+      </Link>
+        <h4 className="project-card-text">{projectData.description}</h4>
+      <Link to={`/project/${projectData.id}`}>
+        <h4 className="read-more-link">Read more...</h4>
       </Link>
     </div>
   );

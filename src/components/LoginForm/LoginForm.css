@@ -1,0 +1,39 @@
+.container-form {
+    margin: 10px;
+    padding: 2rem;
+    background: rgb(216, 214, 214);
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    /* row-gap: 10px; */
+    justify-content: space-between;
+}
+
+input {
+    align-content: center;
+    border-style: solid;
+    border-color:grey;
+    height: 25px;
+    width: 90%;
+    background-color: white;
+    font-family: "Quicksand", sans-serif;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.login-btn {
+    align-content: center;
+    border-style: solid;
+    border-color:grey;
+    height: 40px;
+    width: 50%;
+    background-color: rgb(194, 194, 89);
+    font-family: "Quicksand", sans-serif;
+    padding: 5px;
+    margin-left: 80px;
+    border-radius: 5px;
+    font-size: 20px;
+
+}
