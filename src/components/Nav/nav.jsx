@@ -21,6 +21,7 @@ const handleLogOut = () => {
         <Link to="/">Beebay</Link>
       </div>
       <div>
+        {/* <img className="logo" src="https://previews.123rf.com/images/dandart99/dandart991907/dandart99190700012/127424130-bee-logo-with-simple-line-style-colored-black-and-yellow.jpg"/> */}
         <p>navicon</p>
       </div>
     </nav>

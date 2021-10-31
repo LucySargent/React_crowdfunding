@@ -17,8 +17,9 @@ function App() {
           {/* {userToken ? <p>hello user!</p> : <p>no logged in user</p>} */}
           <h2>About Beebay...</h2>
         </div>
-        <div>
-          <Link to="/projects/" className="btn">Add a project</Link>
+        <div className="addProject">
+          
+          <Link to="/projects/" className="addProjectBtn">Add a project</Link>
         </div>
 
         <Switch>

@@ -58,6 +58,10 @@ h1, h2, h3, h4, a {
   text-decoration: none;
 }
 
+.addProject{
+  margin-bottom: 20px
+}
+
 .btn {
   align-content: center;
   border-style: solid;
@@ -72,12 +76,28 @@ h1, h2, h3, h4, a {
   border-radius: 5px;
   margin-left: 27%;
 }
+
+.addProjectBtn {
+  align-content: center;
+  border-style: solid;
+  border-color:grey;
+  height: 30px;
+  width: 200px;
+  background-color: white;
+  font-family: "Quicksand", sans-serif;
+  font-size: 16px;
+  padding: 5px;
+  margin: 10px;
+  border-radius: 5px;
+  margin-left: 27%;
+  margin-bottom: 40px;
+}
+
 .read-more-link {
   color:olive;
   font-weight: bolder;
   margin-left:10px;
 }
-
 
 .container-pledges {
   background-color: rgb(225, 226, 209);
