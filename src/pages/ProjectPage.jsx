@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 
 function ProjectPage() {
-  //starting state is object with empty arry
+  //starting state is object with empty array
   const [projectData, setProjectData] = useState({ pledges: [] });
   //this gets the thing we have called id from url(individual project)
   const [isEditing, setIsEditing] = useState(false);
+  const [error, setError] = useState(null);
+  const history = useHistory();
   const { id: project_id } = useParams();
   const formattedDate = new Date(projectData.date_created).toLocaleDateString();
 
@@ -21,33 +23,43 @@ function ProjectPage() {
         setProjectData(data);
       });
   }, [project_id]);
-  //can edit title, description, goal, image, is_open
 
   const handleChange = (e) => {
     const { id, value } = e.target;
-    console.log("we are updating the ");
+    console.log("we are updating the project");
     setProjectData({
       ...projectData,
       [id]: value,
     });
   };
+
   //async await - alot of stuff happening simultaneously. Use await to control the load.
   const handleSubmit = async (e) => {
-    console.log("hello");
     e.preventDefault();
-    const response = await fetch(
-      `${process.env.REACT_APP_API_URL}projects/${project_id}/`,
-      {
-        method: "put",
-        headers: {
-          Authorization: `Token ${localStorage.getItem("token")}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(projectData),
+
+    try {
+      const response = await fetch(
+        `${process.env.REACT_APP_API_URL}projects/${project_id}/`,
+        {
+          method: "put",
+          headers: {
+            Authorization: `Token ${localStorage.getItem("token")}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(projectData),
+        }
+      );
+      if (!response.ok) {
+        const { detail } = await response.json()
+        throw new Error(detail)
       }
-    );
-    console.log("Bye", response);
-    setIsEditing(false)
+    } catch(err) {
+      if (err.message === "You do not have permission to perform this action.") {
+        history.push("/forbidden")
+      }
+      setError(err.message)
+    }
+    // setIsEditing(false);
   };
 
   const ReadProject = () => {
@@ -81,9 +93,14 @@ function ProjectPage() {
   };
 
   console.log("project data is:", projectData);
-
-  const handleDelete = () => {
-    
+  
+  const handleClick = () => {
+    console.log("about to delete")
+    fetch(`${process.env.REACT_APP_API_URL}projects/${project_id}/`, {
+      method: 'DELETE'
+    }).then(() => {
+      history.push('/');
+    })
   }
 
   return (
@@ -116,13 +133,13 @@ function ProjectPage() {
               onChange={handleChange}
             />
             <div>
-              <label htmlFor="username">Suburbs</label>
+              <label htmlFor="username">Suburb:</label>
               <input
                 value={projectData.suburbs}
                 name="suburbs"
                 type="text"
                 id="suburbs"
-                placeholder="Edit suburb"
+                placeholder="Suburb"
                 onChange={handleChange}
               />
             </div>
@@ -161,12 +178,11 @@ function ProjectPage() {
           <button className="btn" type="submit">
             Update Project
           </button>
+          <div>{error && <div>{error}</div>}</div>
           <button className="btn" onClick={() => setIsEditing(false)}>
             Cancel
           </button>
-          <button className="btn">
-            Delete Project
-          </button>
+          <button onClick={handleClick}>Delete Project</button>
         </form>
       ) : (
         <ReadProject />
@@ -176,29 +192,3 @@ function ProjectPage() {
 }
 
 export default ProjectPage;
-
-// </div>
-//       <div className="project">
-//         <h1>{projectData.title}</h1>
-//         <img src={projectData.image}/>
-//         <h3>{`Description: ${projectData.description}`}</h3>
-//         <div className ="project-details">
-//         <h4>{`Suburb: ${projectData.suburbs}`}</h4>
-//         <h4>Created: {formattedDate}</h4>
-//         <h4>{`Beehive goal: ${projectData.beehives}`}</h4>
-//         <h4>{`Minimum: $${projectData.min_required}`}</h4>
-//         <h4>{`Goal: $${projectData.goal}`}</h4>
-//         {/* <h3>Created at: {projectData.date_created}</h3> */}
-//         <h4>{`Status: ${projectData.status}`}</h4>
-//         </div>
-//           <progress value="30" max="100" />
-//         <h2>Pledges</h2>
-//         <div className="container-pledges">
-//           {projectData.pledges.map((pledgeData, key) => {
-//             return (
-//               <ul>
-//                 ${pledgeData.amount} from Supporter {pledgeData.supporter} "{pledgeData.comment}"
-//                 </ul>
-//             );
-//           })}
-//         </div>

@@ -19,8 +19,7 @@ const LoginForm = () => {
 
   const postData = async () => {
     //fetch - get data from server. Fetch is a promise.
-    //async - makes things appear to happen synchronously
-    //await keyword blocks execution of all the code that follows it until the promise fulfills
+    //async-await blocks execution of all the code that follows it until the promise fulfills
     //It does allow other tasks to continue to run in the meantime, but the awaited code is blocked. 
     const response = await fetch(
       `${process.env.REACT_APP_API_URL}api-token-auth/`,
@@ -34,7 +33,7 @@ const LoginForm = () => {
   };
 
   const handleSubmit = (e) => {
-    //prevent form from submitting/refreshing by default
+    console.log("we're logging in")
     e.preventDefault();
     /* && check - both conditions must be true (the other one is || for 'or', this or that)
     reads left to right*/
@@ -52,7 +51,6 @@ const LoginForm = () => {
     <form>
       <div className="container-form">
         <div>
-        {/* <label htmlFor="username">Username:</label> */}
         <input
           type="text"
           id="username"
@@ -62,7 +60,6 @@ const LoginForm = () => {
         />
         </div>
       <div>
-        {/* <label htmlFor="password">Password:</label> */}
         <input
           type="password"
           id="password"
@@ -71,10 +68,12 @@ const LoginForm = () => {
         />
       </div>
       {/* onclick for buttons */}
+      <div className="">
       <button className="login-btn" type="submit" onClick={handleSubmit}>
         Login
       </button>
-    </div>
+      </div>
+      </div>
     </form>
   );
 }

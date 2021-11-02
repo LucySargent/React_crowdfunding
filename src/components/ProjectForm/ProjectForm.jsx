@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./ProjectForm.css";
+// import otherlogo from "./src/otherlogo.jpg"
 
 const ProjectForm = () => {
   const [projectData, setProjectData] = useState({
@@ -22,25 +23,20 @@ const ProjectForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     // console.log(newProject)
     const token = window.localStorage.getItem("token");
-    console.log(token)
-    const bearer = 'Bearer ' + token;
-
+    console.log(token);
+    const bearer = "Bearer " + token;
     const myHeaders = new Headers();
-
     /* 
       myHeaders.append('Content-Type', 'application/json'); 
       since it's a get request you don't need to specify your content-type
     */
-  
-    myHeaders.append('Authorization', `Token ${token}`);
+    myHeaders.append("Authorization", `Token ${token}`);
     myHeaders.append("Content-Type", "application/json");
-
     fetch(
-        `${process.env.REACT_APP_API_URL}projects/`,
-        //options object to say we're posting
+      `${process.env.REACT_APP_API_URL}projects/`,
+      //this is an options object - to say we're posting
       {
         method: "POST",
         headers: myHeaders,
@@ -48,11 +44,17 @@ const ProjectForm = () => {
       }
       //fetch returns a promise - think "after fetch, I can add a .then and do more things!"
       //could use async await here
-    ).then((response) => {
-      return response.json()
-    }).then(results => console.log(results))
-    .catch(error => console.log(error))
-    console.log(projectData)
+    )
+      .then((response) => {
+        console.log("we're posting a project")
+        if(!response.ok) {
+          throw Error("please complete all fields")
+        }
+        return response.json();
+      })
+      .then((results) => console.log(results))
+      .catch(error => console.log(error.message));
+    console.log(projectData);
   };
 
   return (

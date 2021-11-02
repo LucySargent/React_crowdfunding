@@ -1,28 +1,31 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./nav.css";
+import otherlogo from "../../otherlogo.jpg"
+import navicon from "../../navicon.png"
+
 
 function Nav() {
 const token = window.localStorage.getItem("token")
-
 const [userToken, setUserToken] = useState(token)
 
 const handleLogOut = () => {
+  console.log("we are handling the logout")
   window.localStorage.removeItem("token")
   setUserToken(null)
   }
 
+
   return (
     <nav className="nav-container">
       <div className="nav-login">
-      {userToken ? <button onClick={handleLogOut}>logout</button> : <Link to="/login"><p>Login</p></Link>}
+      {userToken ? <button className="" onClick={handleLogOut}>logout</button> : <Link to="/login"><p>Login</p></Link>}
       </div>
       <div>
-        <Link to="/">Beebay</Link>
+        <Link to="/"><img className="mainlogo" src={ otherlogo } alt="test"/></Link>
       </div>
       <div>
-        {/* <img className="logo" src="https://previews.123rf.com/images/dandart99/dandart991907/dandart99190700012/127424130-bee-logo-with-simple-line-style-colored-black-and-yellow.jpg"/> */}
-        <p>navicon</p>
+        <img className="navicon" src={ navicon } alt="test"/>
       </div>
     </nav>
   );
