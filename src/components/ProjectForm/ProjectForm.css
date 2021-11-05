@@ -1,0 +1,21 @@
+.project-form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.submit-project-btn {
+  display: flex;
+  align-content: center;
+  height: 30px;
+  border-style: solid;
+  border-color: rgb(105, 165, 130);
+  width: 100px;
+  background-color: rgb(105, 165, 130);
+  font-family: "Quicksand", sans-serif;
+  font-size: 16px;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  margin-left: 28%;
+  color: white;
+}

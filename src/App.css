@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(252, 252, 250);
+  background-color: white;
   font-family: "Quicksand", sans-serif;
   text-decoration: none;
 }
@@ -12,17 +12,6 @@ body {
   justify-content: center;
 }
 
-/* #project-list {
-  padding-right: 1rem;
-  padding-left: 1rem;
-  display: flex;
-  display: grid;
-  grid-template-columns: 30% 30% 30%;
-  column-gap: 10px;
-  row-gap: 10px;
-  text-decoration: none;
-} */
-
 .project-details {
   padding-right: 1rem;
   padding-left: 1rem;
@@ -31,10 +20,25 @@ body {
   column-gap: 10px;
   row-gap: 10px;
   text-decoration: none;
-  /* justify-content: center; */
   align-content: center;
+  justify-content: center;
 }
 
+.project_image {
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.project_title{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.project_description{
+  margin-left: 10px;
+  margin-right: 10px;
+}
 
 #project-list {
   padding-right: 1rem;
@@ -47,13 +51,17 @@ body {
 }
 
 .project {
-  width: 90%;
+  width: 95%;
   display: flex;
   flex-direction: column;
   line-height: normal;
   text-decoration: none;
-  padding-right: 1rem;
-  padding-left: 1rem;
+  /* box-shadow: 0px 0px 5px rgb(97 96 90); */
+  height: auto;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgb(14, 37, 31);
 }
 
 h1, h2, h3, h4, a {
@@ -67,24 +75,37 @@ h1, h2, h3, h4, a {
 }
 
 .btn {
-  align-content: center;
+  /* align-content: center; */
   border-style: solid;
-  border-color:grey;
+  border-color: rgb(105, 165, 130);
+  background-color: rgb(105, 165, 130);
+  color: white;
   height: 30px;
-  width: 200px;
-  background-color: white;
   font-family: "Quicksand", sans-serif;
   font-size: 16px;
-  padding: 5px;
-  margin: 10px;
+  margin-top: 20px;
   border-radius: 5px;
-  margin-left: 27%;
+}
+
+.edit-btn {
+  border-style: solid;
+  border-color: rgb(105, 165, 130);
+  background-color: rgb(105, 165, 130);
+  color: white;
+  height: 30px;
+  font-family: "Quicksand", sans-serif;
+  font-size: 16px;
+  margin: 20px;
+  border-radius: 5px;
+}
+
+.edit-button-container{
+  display: flex;
+  justify-content: center;
 }
 
 .addProjectBtn {
   align-content: center;
-  /* border-style: solid; */
-  /* border-color:grey; */
   height: 30px;
   width: 300px;
   background-color: rgb(105, 165, 130);
@@ -97,20 +118,10 @@ h1, h2, h3, h4, a {
   color: white;
 }
 
-.read-more-link {
-  color:olive;
-  font-weight: bolder;
-  margin-left:10px;
-}
 
-.container-pledges {
-  background-color: rgb(225, 226, 209);
-}
-
-.strikethrough {
-  text-decoration: line-through;
-  font-family: 'Caveat', cursive;
-  font-size: 35px;
+ul {
+  font-family: "Quicksand", sans-serif;
+  list-style-image: url("./bee_small.jpg");
 }
 
 .banner{
@@ -120,3 +131,21 @@ h1, h2, h3, h4, a {
   font-weight: lighter;
   text-decoration: wavy;
 }
+
+form, input {
+  display:flex;
+  flex-direction: column;
+  font-family: "Quicksand", sans-serif;
+  margin-left: 30px
+}
+
+.edit-buttons-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 300px;
+  margin-left: 15px;
+  margin-bottom: 30px;
+}
+
+

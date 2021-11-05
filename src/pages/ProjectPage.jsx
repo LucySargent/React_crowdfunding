@@ -50,14 +50,16 @@ function ProjectPage() {
         }
       );
       if (!response.ok) {
-        const { detail } = await response.json()
-        throw new Error(detail)
+        const { detail } = await response.json();
+        throw new Error(detail);
       }
-    } catch(err) {
-      if (err.message === "You do not have permission to perform this action.") {
-        history.push("/forbidden")
+    } catch (err) {
+      if (
+        err.message === "You do not have permission to perform this action."
+      ) {
+        history.push("/forbidden");
       }
-      setError(err.message)
+      setError(err.message);
     }
     // setIsEditing(false);
   };
@@ -65,9 +67,11 @@ function ProjectPage() {
   const ReadProject = () => {
     return (
       <div className="project">
-        <h1>{projectData.title}</h1>
-        <img src={projectData.image} />
-        <h3>{`Description: ${projectData.description}`}</h3>
+        <h2 className="project_title" a>
+          {projectData.title}
+        </h2>
+        <img className="project_image" src={projectData.image} alt="bee" />
+        <h3 className="project_description">{`${projectData.description}`}</h3>
         <div className="project-details">
           <h4>{`Suburb: ${projectData.suburbs}`}</h4>
           <h4>Created: {formattedDate}</h4>
@@ -77,13 +81,13 @@ function ProjectPage() {
           <h4>{`Status: ${projectData.status}`}</h4>
         </div>
         <progress value="30" max="100" />
-        <h2>Pledges</h2>
+        <h2 className="project_description">Pledges</h2>
         <div className="container-pledges">
-          {projectData.pledges.map((pledgeData, key) => {
+          {projectData?.pledges.map((pledgeData, key) => {
             return (
               <ul>
-                ${pledgeData.amount} from Supporter {pledgeData.supporter} "
-                {pledgeData.comment}"
+                ${pledgeData.amount} "{pledgeData.comment}" - Supporter{" "}
+                {pledgeData.supporter}
               </ul>
             );
           })}
@@ -93,35 +97,66 @@ function ProjectPage() {
   };
 
   console.log("project data is:", projectData);
-  
-  const handleClick = () => {
-    console.log("about to delete")
-    fetch(`${process.env.REACT_APP_API_URL}projects/${project_id}/`, {
-      method: 'DELETE'
-    }).then(() => {
-      history.push('/');
-    })
-  }
+
+  // const deleteProject = async () => {
+  //   console.log("about to delete");
+  //   fetch(`${process.env.REACT_APP_API_URL}projects/${project_id}/`, {
+  //     method: "DELETE",
+  //     headers: {
+  //       Authorization: `Token ${localStorage.getItem("token")}`,
+  //     },
+  //   }).then(() => {
+  //     history.push("/");
+  //   });
+  // };
+  // console.log(projectData);
+
+  const deleteProject = async () => {
+    console.log("about to delete");
+    try {
+      const response = await fetch(
+        `${process.env.REACT_APP_API_URL}projects/${project_id}/`,
+        {
+          method: "DELETE",
+          headers: {
+            Authorization: `Token ${localStorage.getItem("token")}`,
+          },
+        }
+      );
+      if (!response.ok) {
+        const { detail } = await response.json();
+        throw new Error(detail);
+      }
+    } catch (err) {
+      if (err.message === "Not found.") {
+        history.push("/forbidden");
+      }
+      setError(err.message);
+    }
+  };
 
   return (
-    <div>
-      <div>
+    <div className="edit_project">
+      <div className="edit-button-container">
         {localStorage.getItem("token") && isEditing === false && (
-          <button className="btn" onClick={() => setIsEditing(true)}>
+          <button className="edit-btn" onClick={() => setIsEditing(true)}>
             Edit Project
           </button>
         )}
       </div>
       {isEditing ? (
         <form onSubmit={handleSubmit}>
-          <label htmlFor="username">Title:</label>
-          <input
-            value={projectData.title}
-            type="text"
-            id="title"
-            placeholder=""
-            onChange={handleChange}
-          />
+          <div>
+            <h3>Edit this project</h3>
+            <label htmlFor="username">Title:</label>
+            <input
+              value={projectData.title}
+              type="text"
+              id="title"
+              placeholder=""
+              onChange={handleChange}
+            />
+          </div>
           <div>
             <label htmlFor="username">Description:</label>
             <input
@@ -132,57 +167,62 @@ function ProjectPage() {
               placeholder="Edit description"
               onChange={handleChange}
             />
-            <div>
-              <label htmlFor="username">Suburb:</label>
-              <input
-                value={projectData.suburbs}
-                name="suburbs"
-                type="text"
-                id="suburbs"
-                placeholder="Suburb"
-                onChange={handleChange}
-              />
-            </div>
-            <div>
-              <label htmlFor="username">Beehives:</label>
-              <input
-                value={projectData.beehives}
-                name="beehives"
-                type="text"
-                id="beehives"
-                placeholder="Edit number of beehives"
-                onChange={handleChange}
-              />
-            </div>
-            <div>
-              <label htmlFor="username">Image:</label>
-              <input
-                value={projectData.image}
-                name="image"
-                type="text"
-                id="image"
-                onChange={handleChange}
-              />
-            </div>
-            <div>
-              <label htmlFor="username">Is_open:</label>
-              <input
-                value={projectData.is_open}
-                name="is_open"
-                type="text"
-                id="is_open"
-                onChange={handleChange}
-              />
-            </div>
           </div>
-          <button className="btn" type="submit">
-            Update Project
-          </button>
-          <div>{error && <div>{error}</div>}</div>
-          <button className="btn" onClick={() => setIsEditing(false)}>
-            Cancel
-          </button>
-          <button onClick={handleClick}>Delete Project</button>
+          <div>
+            <label htmlFor="username">Suburb:</label>
+            <input
+              value={projectData.suburbs}
+              name="suburbs"
+              type="text"
+              id="suburbs"
+              placeholder="Suburb"
+              onChange={handleChange}
+            />
+          </div>
+          <div>
+            <label htmlFor="username">Beehives:</label>
+            <input
+              value={projectData.beehives}
+              name="beehives"
+              type="text"
+              id="beehives"
+              placeholder="Edit number of beehives"
+              onChange={handleChange}
+            />
+          </div>
+          <div>
+            <label htmlFor="username">Image:</label>
+            <input
+              value={projectData.image}
+              name="image"
+              type="text"
+              id="image"
+              onChange={handleChange}
+            />
+          </div>
+          <div>
+            <label htmlFor="username">Is_open:</label>
+            <input
+              value={projectData.is_open}
+              name="is_open"
+              type="text"
+              id="is_open"
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className="edit-buttons-container">
+            <button className="btn" type="submit">
+              Update
+            </button>
+            {/* <div>{error && <div>{error}</div>}</div> */}
+            <button className="btn" onClick={() => setIsEditing(false)}>
+              Cancel
+            </button>
+            <button className="btn" onClick={deleteProject}>
+              Delete
+            </button>
+          </div>
         </form>
       ) : (
         <ReadProject />

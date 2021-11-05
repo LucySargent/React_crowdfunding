@@ -13,13 +13,14 @@ const handleLogOut = () => {
   console.log("we are handling the logout")
   window.localStorage.removeItem("token")
   setUserToken(null)
+  console.log("token is: ", window.localStorage.getItem("token"))
   }
 
 
   return (
     <nav className="nav-container">
       <div className="nav-login">
-      {userToken ? <button className="" onClick={handleLogOut}>logout</button> : <Link to="/login"><p>Login</p></Link>}
+      {userToken ? <button className="logoutbtn" onClick={handleLogOut}>Logout</button> : <Link to="/login"><p>login</p></Link>}
       </div>
       <div>
         <Link to="/"><img className="mainlogo" src={ otherlogo } alt="test"/></Link>

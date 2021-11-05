@@ -1,0 +1,12 @@
+.forbidden-container {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    padding: 20px;
+}
+
+.homelink {
+    text-decoration: underline;
+    font-weight: bolder;
+}

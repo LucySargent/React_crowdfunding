@@ -1,43 +1,65 @@
-.container-form {
-    margin: 10px;
-    padding: 2rem;
-    /* background: rgb(233, 231, 231); */
-    height: 800px;
-    display: flex;
-    flex-direction: column;
-    /* row-gap: 10px; */
-    /* justify-content: space-between; */
-    background-image: url("../../honeycomb_light.jpg")
+.form-container {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  background-image: url("../../honeycomb_light.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.test{
+    margin-top: 30px;
 }
 
 input {
-    align-content: center;
-    border-style: solid;
-    border-color:grey;
-    height: 25px;
-    width: 90%;
-    /* background-color: white; */
-    font-family: "Quicksand", sans-serif;
-    padding: 5px;
-    margin: 10px;
-    border-radius: 5px;
-    font-size: 20px;
+  align-content: center;
+  border-style: solid;
+  border-color: grey;
+  height: 25px;
+  width: 300px;
+  font-family: "Quicksand", sans-serif;
+  border-radius: 5px;
+  font-size: 16px;
 }
 
 .login-btn {
-    align-content: center;
-    border-style: solid;
-    border-color:rgb(105, 165, 130);
-    height: 40px;
-    width: 200px;
-    background-color: rgb(105, 165, 130);
-    font-family: "Quicksand", sans-serif;
-    padding: 10px;
-    margin-left: 70px;
-    margin-top: 50px;
-    border-radius: 5px;
-    font-size: 16px;
-    color: white;
+  align-content: center;
+  border-style: solid;
+  border-color: rgb(105, 165, 130);
+  height: 40px;
+  width: 100px;
+  background-color: rgb(105, 165, 130);
+  font-family: "Quicksand", sans-serif;
+  margin-top: 30px;
+  border-radius: 5px;
+  font-size: 16px;
+  color: white;
 }
 
+.login-button-container {
+  display: flex;
+  justify-content: center;
+  margin-right: 30px;
+  /* border-style: solid; */
+  /* background-image: url("../../honeycomb_light.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center; */
+}
 
+.signup_message {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 50px;
+}
+
+.signup_link {
+  text-decoration: underline;
+  font-weight: bolder;
+  color: rgb(105, 165, 130);
+}

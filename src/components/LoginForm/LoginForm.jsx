@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom"
 import './LoginForm.css' 
 
 const LoginForm = () => {
@@ -41,16 +42,23 @@ const LoginForm = () => {
       postData().then((response) => {
         //storing in browser memory
         window.localStorage.setItem("token", response.token);
+        console.log("token:", response.token)
         history.push("/");
         console.log(response);
+        console.log(window.location)
+        window.location = `${window.location.origin}/`
       });
     }
   };
 
   return (
+    <div>
+      <div className="signup_message">
+        <h3>Don't have a Beebay account? <Link className="signup_link" to="/users/">Sign Up</Link></h3>
+      </div>
     <form>
-      <div className="container-form">
-        <div>
+      <div className="form-container">
+        <div className="test">
         <input
           type="text"
           id="username"
@@ -68,13 +76,14 @@ const LoginForm = () => {
         />
       </div>
       {/* onclick for buttons */}
-      <div className="">
+      <div className="login-button-container">
       <button className="login-btn" type="submit" onClick={handleSubmit}>
         Login
       </button>
       </div>
       </div>
     </form>
+   </div> 
   );
 }
 

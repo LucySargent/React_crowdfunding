@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import Nav from "./components/Nav/nav";
@@ -7,8 +7,9 @@ import HomePage from "./pages/HomePage";
 import ProjectPage from "./pages/ProjectPage";
 import LoginPage from "./pages/LoginPage";
 import AddProjectPage from "./pages/AddProjectPage";
-import otherlogo from "./otherlogo.jpg"
 import ForbiddenPage from "./pages/Forbidden";
+import SignUpPage from "./pages/SignUpPage";
+import HeaderFooter from "./layouts/HeaderFooter";
 
 function App() {
 
@@ -16,11 +17,6 @@ function App() {
     <Router>
       <div>
         <Nav />
-        <div className="addProject">
-          <Link to="/login" className="addProjectBtn">
-            Start a Beebay Project
-          </Link>
-        </div>
         <Switch>
           <Route path="/projects/">
             <AddProjectPage />
@@ -32,16 +28,18 @@ function App() {
           <Route path="/login">
             <LoginPage />
           </Route>
-          <Route exact path="/">
+            <Route exact path="/">
+            <HeaderFooter >
             <HomePage />
+            </HeaderFooter>
           </Route>
           <Route path="/forbidden">
             <ForbiddenPage />
           </Route>
+          <Route path="/users/">
+            <SignUpPage />
+          </Route>
         </Switch>
-      </div>
-      <div>
-        <button className="btn">See more projects</button>
       </div>
     </Router>
   );

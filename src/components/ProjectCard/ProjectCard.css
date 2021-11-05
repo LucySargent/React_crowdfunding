@@ -1,6 +1,10 @@
 .project-card {
   width: 100%;
-  box-shadow: 0px 0px 5px rgb(97, 96, 90);
+  /* box-shadow: 0px 0px 5px rgb(97, 96, 90); */
+  box-shadow: 0px 0px 5px rgb(14, 37, 31);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  /* background-color: rgb(237, 240, 241); */
 }
 
 .project-card img {
@@ -13,5 +17,19 @@
   margin-left:10px;
 }
 
+.read-more-link {
+  text-decoration: underline;
+  color: rgb(105, 165, 130);
+  margin-left:10px;
+}
 
+.container-pledges {
+  border-radius: 5px;
+  height: auto;
+  margin-bottom: 20px;
+  background-color: rgb(210, 225, 230);
+  color: black;
+  width: 95%;
+  margin-left: 10px;
+}
 

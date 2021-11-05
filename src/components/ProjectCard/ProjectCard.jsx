@@ -10,7 +10,7 @@ function ProjectCard(props) {
     <div className="project-card">
       {/* direct project cards to specific project pages */}
       <Link to={`/project/${projectData.id}`}>
-        <img src={projectData.image} />
+        <img src={projectData.image} alt="bee"/>
         <h3 className="project-card-text">{projectData.title}</h3>
       </Link>
         <h4 className="project-card-text">{projectData.description}</h4>

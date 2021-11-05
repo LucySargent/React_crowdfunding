@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: row; 
     height: auto; 
-    justify-content: space-between;   
+    justify-content: space-around;   
     align-items: center;
     padding-right: 1rem;
     padding-left: 1rem;
@@ -23,10 +23,18 @@ nav a {
 }
 
 .mainlogo {
-  height: 120px;
+  height: 100px;
+  padding-right: 20px;
 }
 
 .navicon {
   height: 30px;
-  padding-right: 15px
+  padding-right: 10px
+}
+
+.logoutbtn {
+  background-color: white;
+  border: none;
+  font-family: "Quicksand", sans-serif;
+  font-size: 20px;
 }
