@@ -23,8 +23,8 @@ Delete their project - http://localhost:3000/project/id
 
 Unauthorised edits and deletes are directed to a forbidden notice - http://localhost:3000/forbidden
 
-Homepage: IMAGE
-Project craetion form: IMAGE
+Homepage: IMAGE crowdfunding\screenshots\homepage.jpg
+Project creation form: IMAGE 
 A project with pledges: IMAGE
 Unauthorised actions: IMAGE
 
