@@ -23,7 +23,7 @@ Delete their project - http://localhost:3000/project/id
 
 Unauthorised edits and deletes are directed to a forbidden notice - http://localhost:3000/forbidden
 
-Homepage: IMAGE crowdfunding\screenshots\homepage.jpg
+Homepage: https://github.com/LucySargent/React_crowdfunding/blob/main/screenshots/homepage.jpg
 Project creation form: IMAGE 
 A project with pledges: IMAGE
 Unauthorised actions: IMAGE
