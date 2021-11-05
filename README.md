@@ -1,26 +1,37 @@
-Beebay
-REACT Crowdfunding app
+<h2>REACT Crowdfunding app</h2>
 
-Git Repo: https://github.com/LucySargent/React_crowdfunding
-Deployed app: https://pure-cliffs-12549.herokuapp.com
+<p>Git Repo: https://github.com/LucySargent/React_crowdfunding</p>
+<p>Deployed app: https://pure-cliffs-12549.herokuapp.com</p>
 
-PLEASE VIEW IN MOBILE VIEW - iphone 6/7/8 Plus (media queries not done yet!) 
+<p>PLEASE VIEW IN MOBILE VIEW - iphone 6/7/8 Plus (media queries not done yet!)</p>
 
-FUNCTIONALITY
-User can:
-Sign Up
-Login
+<stong>FUNCTIONALITY</strong>
+<br>
+<h4>User can:</h4>
+<ul>
+    <li>Sign Up</li>
+<li>Login</li>
+</ul>
 
-If logged in, user can:
-Create a Beebay Project
-    user sees validation messages if data is incomplete 
-    user sees a confirmation message when project is created successfully
+<h4>If logged in, user can:</h4>
+<ul>
+<li>Create a Beebay Project</li>
+    </ul>
+ <p>User sees validation messages if data is incomplete</p>
+ <p>User sees a confirmation message when project is created successfully</p>
 
-If logged in AND the project owner, user can:
-Edit their project
-Delete their project
 
-Unauthorised edits and deletes are directed to a forbidden notice.
+<h4>If logged in AND the project owner, user can:</h4>
+<ul>
+<li>Edit their project</li>
+<li>Delete their project</li>
+</ul>
+
+<h4>Unautyhorised</h4>
+<ul>
+<li>Unauthorised project updates are directed to a forbidden notice.</li>
+<li>Unauthorised project deletes are directed to a forbidden notice.</li>
+    </ul>
 
 Homepage: 
 Project creation form: IMAGE 
