@@ -1,13 +1,12 @@
 Beebay
-
-https://github.com/LucySargent/React_crowdfunding
-https://pure-cliffs-12549.herokuapp.com
-
 REACT Crowdfunding app
+
+Git Repo: https://github.com/LucySargent/React_crowdfunding
+Deployed app: https://pure-cliffs-12549.herokuapp.com
 
 PLEASE VIEW IN MOBILE VIEW - iphone 6/7/8 Plus (media queries not done yet!) 
 
-
+FUNCTIONALITY
 User can:
 Sign Up - http://localhost:3000/users/
 Login - http://localhost:3000/login
