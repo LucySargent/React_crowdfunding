@@ -8,27 +8,26 @@ PLEASE VIEW IN MOBILE VIEW - iphone 6/7/8 Plus (media queries not done yet!)
 
 FUNCTIONALITY
 User can:
-Sign Up - http://localhost:3000/users/
-Login - http://localhost:3000/login
+Sign Up
+Login
 
 If logged in, user can:
-Create a Beebay Project - http://localhost:3000/projects/
+Create a Beebay Project
     user sees validation messages if data is incomplete 
     user sees a confirmation message when project is created successfully
 
 If logged in AND the project owner, user can:
-Edit their project - http://localhost:3000/project/id
-Delete their project - http://localhost:3000/project/id
+Edit their project
+Delete their project
 
-Unauthorised edits and deletes are directed to a forbidden notice - http://localhost:3000/forbidden
+Unauthorised edits and deletes are directed to a forbidden notice.
 
-Homepage: https://github.com/LucySargent/React_crowdfunding/blob/main/screenshots/homepage.jpg
+Homepage: 
 Project creation form: IMAGE 
 A project with pledges: IMAGE
 Unauthorised actions: IMAGE
 
-ADDITIONAL:
-Data validation check: IMAGE
+
 
 
 
