@@ -1,3 +1,41 @@
+Beebay
+
+https://github.com/LucySargent/React_crowdfunding
+https://pure-cliffs-12549.herokuapp.com
+
+REACT Crowdfunding app
+
+PLEASE VIEW IN MOBILE VIEW - iphone 6/7/8 Plus (media queries not done yet!) 
+
+
+User can:
+Sign Up - http://localhost:3000/users/
+Login - http://localhost:3000/login
+
+If logged in, user can:
+Create a Beebay Project - http://localhost:3000/projects/
+    user sees validation messages if data is incomplete 
+    user sees a confirmation message when project is created successfully
+
+If logged in AND the project owner, user can:
+Edit their project - http://localhost:3000/project/id
+Delete their project - http://localhost:3000/project/id
+
+Unauthorised edits and deletes are directed to a forbidden notice - http://localhost:3000/forbidden
+
+Homepage: IMAGE
+Project craetion form: IMAGE
+A project with pledges: IMAGE
+Unauthorised actions: IMAGE
+
+ADDITIONAL:
+Data validation check: IMAGE
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
