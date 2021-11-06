@@ -35,5 +35,5 @@
 
 Screenshots
 ![Home / Create User / Pledges](/screenshots/home_create_unauthorised.jpg "")
-![Login / Sign Up / Unauthorised](/screenshots/home_create_unauthorised.jpg "")
+![Login / Sign Up / Unauthorised](/screenshots/login_signup_unauthorised.jpg "")
 
