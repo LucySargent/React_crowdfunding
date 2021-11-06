@@ -9,7 +9,7 @@
   background-position: center;
 }
 
-.test{
+.login-form{
     margin-top: 30px;
 }
 
@@ -36,6 +36,8 @@ input {
   border-radius: 5px;
   font-size: 16px;
   color: white;
+  font-weight:bold;
+  font-stretch:expanded;
 }
 
 .login-button-container {

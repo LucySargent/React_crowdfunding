@@ -58,7 +58,7 @@ const LoginForm = () => {
       </div>
     <form>
       <div className="form-container">
-        <div className="test">
+        <div className="login-form">
         <input
           type="text"
           id="username"

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
+import PledgeForm from "../components/PledgeForm/PledgeForm"
 
 function ProjectPage() {
   //starting state is object with empty array
@@ -80,8 +81,8 @@ function ProjectPage() {
           <h4>{`Goal: $${projectData.goal}`}</h4>
           <h4>{`Status: ${projectData.status}`}</h4>
         </div>
-        <progress value="30" max="100" />
-        <h2 className="project_description">Pledges</h2>
+        <div className="progress" ><progress value="30" max="100" /></div>
+        <PledgeForm />
         <div className="container-pledges">
           {projectData?.pledges.map((pledgeData, key) => {
             return (
@@ -134,6 +135,7 @@ function ProjectPage() {
       setError(err.message);
     }
   };
+
 
   return (
     <div className="edit_project">
@@ -215,7 +217,6 @@ function ProjectPage() {
             <button className="btn" type="submit">
               Update
             </button>
-            {/* <div>{error && <div>{error}</div>}</div> */}
             <button className="btn" onClick={() => setIsEditing(false)}>
               Cancel
             </button>

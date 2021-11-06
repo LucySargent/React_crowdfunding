@@ -13,7 +13,7 @@ const ProjectForm = () => {
   });
 
   const [errors, setErrors] = useState([]);
-  const [message, setMessage] = useState("")
+  const [message, setMessage] = useState("");
 
   //could call setProjectData and put this functionality inline and not have handleChange
   const handleChange = (e) => {
@@ -26,11 +26,11 @@ const ProjectForm = () => {
   const checkForErrors = () => {
     setErrors([]);
     if (projectData.title === "") {
-      setErrors((prevErrors) => [...prevErrors, "Title can't be empty!"]);
+      setErrors((prevErrors) => [...prevErrors, "Don't forget your title!"]);
     }
     console.log(errors);
     if (projectData.description === "") {
-      setErrors((prevErrors) => [...prevErrors, "Description can't be empty!"]);
+      setErrors((prevErrors) => [...prevErrors, "Please add a description!"]);
     }
     console.log(errors);
     if (projectData.suburb === "") {
@@ -41,131 +41,110 @@ const ProjectForm = () => {
     }
     console.log(errors);
     if (projectData.image === "") {
-      setErrors((prevErrors) => [...prevErrors, "Image can't be empty!"]);
+      setErrors((prevErrors) => [...prevErrors, "Please add an image!"]);
     }
     console.log(errors);
     if (projectData.beehives === "") {
-      setErrors((prevErrors) => [
-        ...prevErrors,
-        "Beehives can't be empty and must be a number!",
-      ]);
+      setErrors((prevErrors) => [...prevErrors, "Beehives needs a number!"]);
     }
     console.log(errors);
-  }
+  };
 
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      checkForErrors();
-      if (errors.length > 0) {
-        //early return
-        return;
-      }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    checkForErrors();
+    if (errors.length > 0) {
+      //early return
+      return;
+    }
 
-      const token = window.localStorage.getItem("token");
-     
+    const token = window.localStorage.getItem("token");
 
-      /* 
+    /* 
       myHeaders.append('Content-Type', 'application/json'); 
       since it's a get request you don't need to specify your content-type
     */
 
-      fetch(
-        `${process.env.REACT_APP_API_URL}projects/`,
-        //this is an options object - to say we're posting
-        {
-          method: "POST",
-          headers: {
-            Authorization: `Token ${token}`,
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(projectData),
-        }
-      )
-        //fetch returns a promise - think "after fetch, I can add a .then and do more things!"
-        //could use async await here
-        .then((response) => {
-          // console.log("we're posting a project");
-          // console.log(response);
-          // console.log(projectData)
-          setMessage("Your Beebay Project has been created.")
-          // if (!response.ok) {
-          //   throw Error("please complete all fields");
-          // }
-          // console.log(response.json);
-          return response.json();
-        })
-      //   .then((results) => console.log(results))
-      //   .catch((error) => console.log(error.message));
-      // console.log(projectData);
-    };
+    fetch(
+      `${process.env.REACT_APP_API_URL}projects/`,
+      //this is an options object - to say we're posting
+      {
+        method: "POST",
+        headers: {
+          Authorization: `Token ${token}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(projectData),
+      }
+    )
+      //fetch returns a promise - think "after fetch, I can add a .then and do more things!"
+      //could use async await here
+      .then((response) => {
+        // console.log("we're posting a project");
+        // console.log(response);
+        // console.log(projectData)
+        setMessage("Your Beebay Project has been created.");
+        // if (response.ok) {
+        //   throw Error("please complete all fields");
+        // }
+        // console.log(response.json);
+        return response.json();
+      });
+    //   .then((results) => console.log(results))
+    //   .catch((error) => console.log(error.message));
+    // console.log(projectData);
+  };
 
-    return (
-      <form>
-        <h3>Create your Beebay project!</h3>
-        <div className="project-form-container">
-          <div>
-            <input
-              name="title"
-              type="text"
-              id="title"
-              placeholder="Title"
-              onChange={handleChange}
-            />
-          </div>
-          <div>
-            <input
-              name="description"
-              type="text"
-              id="description"
-              placeholder="Please add a description"
-              onChange={handleChange}
-            />
-          </div>
-          <div>
-            <input
-              name="suburbs"
-              type="text"
-              id="suburbs"
-              placeholder="Enter your suburb"
-              onChange={handleChange}
-            />
-          </div>
-          <div>
-            <input
-              name="beehives"
-              type="text"
-              id="beehives"
-              placeholder="Number of beehives"
-              onChange={handleChange}
-            />
-          </div>
-          <div>
-            <input
-              name="image"
-              type="text"
-              id="image"
-              placeholder="Add an image"
-              onChange={handleChange}
-            />
-          </div>
-          {/* <div>
+  return (
+    <div>
+      <h3 className="head">Create your Beebay project!</h3>
+      <form className="project-form-container">
+        <div>
           <input
-            name="is_open"
+            name="title"
             type="text"
-            id="is_open"
-            placeholder="is_open"
+            id="title"
+            placeholder="Title"
             onChange={handleChange}
           />
         </div>
         <div>
           <input
-            name="date_created"
-            type="date"
-            id="date_created"
-            placeholder=""
+            name="description"
+            type="text"
+            id="description"
+            placeholder="Please add a description"
             onChange={handleChange}
           />
-        </div> */}
+        </div>
+        <div>
+          <input
+            name="suburbs"
+            type="text"
+            id="suburbs"
+            placeholder="Enter your suburb"
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <input
+            name="beehives"
+            type="text"
+            id="beehives"
+            placeholder="Number of beehives"
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <input
+            name="image"
+            type="text"
+            id="image"
+            placeholder="Add an image"
+            onChange={handleChange}
+          />
+        </div>
+        <div>
           <button
             className="submit-project-btn"
             type="submit"
@@ -181,9 +160,9 @@ const ProjectForm = () => {
             })}
           </ul>
         </div>
-        <div>{message}</div>
       </form>
-    );
+    </div>
+  );
 };
 
 export default ProjectForm;
