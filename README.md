@@ -34,6 +34,6 @@
     </ul>
 
 Screenshots
-![Home / Create User / Unauthorised](/assets/images/san-juan-mountains.jpg "San Juan Mountains")
+![Home / Create User / Unauthorised](/screenshots/home_create_unauthorised.jpg "image")
 
 
