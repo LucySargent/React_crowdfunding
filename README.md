@@ -34,6 +34,6 @@
     </ul>
 
 Screenshots
-![Home / Create User / Unauthorised](/screenshots/home_create_unauthorised.jpg "image")
-
+![Home / Create User / Pledges](/screenshots/home_create_unauthorised.jpg "")
+![Login / Sign Up / Unauthorised](/screenshots/home_create_unauthorised.jpg "")
 
