@@ -27,12 +27,13 @@
 <li>Delete their project</li>
 </ul>
 
-<h4>Unautyhorised</h4>
+<h4>Unauthorised</h4>
 <ul>
 <li>Unauthorised project updates are directed to a forbidden notice.</li>
 <li>Unauthorised project deletes are directed to a forbidden notice.</li>
     </ul>
 
 Screenshots
+![Home / Create User / Unauthorised](/assets/images/san-juan-mountains.jpg "San Juan Mountains")
 
 
