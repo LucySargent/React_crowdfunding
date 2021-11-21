@@ -1,12 +1,16 @@
 <h2>Beebay</h2>
-<p>Beebay is a crowdfunding app which enables people with sites for beehives, local bee-keepers and community supporters to share their collective resources.  
+<p>Beebay is a crowdfunding app enabling people with sites for beehives, local bee-keepers and community supporters to pool their collective resources.  
 Bee-keepers can adopt a site. Community members can donate towards the cost of beehives on the site. The site owner gets a share of the honey!
 It's a three-way partnership to support bee populations.</p>
 
+<h2>View:</h2>
 <p>Git Repo: https://github.com/LucySargent/React_crowdfunding</p>
 <p>Deployed app: https://pure-cliffs-12549.herokuapp.com</p>
 
 <p>PLEASE VIEW IN MOBILE VIEW - iphone 6/7/8 Plus (media queries not done yet!)</p>
+
+Stack:
+[Django Rest Framework](https://github.com/LucySargent/crowdfunding), ReactJS, 
 
 <stong>FUNCTIONALITY</strong>
 <br>
