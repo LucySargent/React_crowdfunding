@@ -81,11 +81,12 @@ react-router-dom: ^6.0.2
 ![Home / Create User / Pledges](/screenshots/home_create_unauthorised.jpg "")
 ![Login / Sign Up / Unauthorised](/screenshots/login_signup_unauthorised.jpg "")
 
-<h2>Bugs to be fixed<h2>
+<h2>Known Bugs</h2>
 <ul>
     <li>Deployed app should land on "/" but is landing on "/login"</li>
     <li>Edit project button should only display when a project owner clicks on their own project.</li>
-    <li>New pledges require page refresh to be visible on project page. They should display immediately.</li>
+    <li>New pledges![database_schema](https://user-images.githubusercontent.com/86648895/142788365-211732b3-0894-42c4-b770-db305befa172.jpg)
+ require page refresh to be visible on project page. They should display immediately.</li>
     </ul>
     
  <h3>Schema</h3>
