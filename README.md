@@ -9,14 +9,13 @@
 <h4>Run locally:</h4>
 <p>Run backend from new terminal:</p>
 <ul>
-<li>From backend directory 'plus-bris-2021-robust-code-beans-react'> venv/Scripts/activate</li>
-<li>Launch the server: python manage.py runserver</li>
+<li>Launch the server from directory - crowdfunding\beebay: python manage.py runserver</li>
 <li>Go to http://localhost:8000/ in your browser or test in Insomnia</li>
     </ul>
 
 <p>Run frontend from new terminal:</p>
     <ul>
-<li>Launch the client app from frontend directory 'plus-bris-2021-robust-code-beans-react'> npm start</li>
+<li>Launch the client app from frontend directory - 'React-crowdfunding\crowdfunding'> npm start</li>
 <li>Go to http://localhost:3000/</li>
 </ul>
 
