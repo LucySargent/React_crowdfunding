@@ -74,8 +74,8 @@ react-router-dom: ^6.0.2
 
 <h4>Permissions</h4>
 <ul>
-<li>Updating a project is limited to the project owner. Unauthorised users are directed to a forbidden notice.</li>
-<li>Deleting a project is limited to the project owner and Admin. Unauthorised users are directed to a forbidden notice.</li>
+<li>Updating a project is limited to the project owner. Unauthorised users are redirected to an unauthorised page.</li>
+<li>Deleting a project is limited to the project owner and Admin. Unauthorised users are redirected to an unauthorised page.</li>
     </ul>
 
 ![Home / Create User / Pledges](/screenshots/home_create_unauthorised.jpg "")
@@ -85,11 +85,11 @@ react-router-dom: ^6.0.2
 <ul>
     <li>Deployed app should land on "/" but is landing on "/login"</li>
     <li>Edit project button should only display when a project owner clicks on their own project.</li>
-    <li>New pledges![database_schema](https://user-images.githubusercontent.com/86648895/142788365-211732b3-0894-42c4-b770-db305befa172.jpg)
- require page refresh to be visible on project page. They should display immediately.</li>
+    <li>New pledges require page refresh to be visible on project page. They should display immediately.</li>
     </ul>
     
- <h3>Schema</h3>
- ![database_schema](/screenshots/database_schema.jpg "")
+ <h3>DB Schema</h3>
+ Initial DB design
+ <p>![database_schema](/screenshots/database_schema.jpg "")</p>
     
     
