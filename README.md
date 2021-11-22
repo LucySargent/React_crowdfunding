@@ -9,13 +9,13 @@
 <h4>Run locally:</h4>
 <p>Run backend from new terminal:</p>
 <ul>
-<li>Launch the server from directory - crowdfunding\beebay: python manage.py runserver</li>
+<li>Launch the server: <code>python manage.py runserver</code></li>
 <li>Go to http://localhost:8000/ in your browser or test in Insomnia</li>
     </ul>
 
 <p>Run frontend from new terminal:</p>
     <ul>
-<li>Launch the client app from frontend directory - 'React-crowdfunding\crowdfunding'> npm start</li>
+<li>Launch the client app from frontend directory: <code>npm start</code></li>
 <li>Go to http://localhost:3000/</li>
 </ul>
 
