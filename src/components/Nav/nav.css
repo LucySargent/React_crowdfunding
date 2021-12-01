@@ -1,16 +1,31 @@
-.nav-container {
+.nav-bar {
     display: flex;
-    flex-direction: row; 
-    height: auto; 
-    justify-content: space-around;   
+    justify-content: center;
     align-items: center;
-    padding-right: 1rem;
-    padding-left: 1rem;
-    margin-top: 15px;
-    margin-bottom: 10px;
-    border-bottom: rgb(200, 200, 200);
-    border-bottom-style: solid;
+    margin-top: 1%;
+    /* border-style: solid; */
+    /* background-color: white; */
+   
   }
+
+.nav-links{
+  /* border-style: solid; */
+  font-size: .7em;
+  text-transform: uppercase;
+  padding-right: 4%;
+}
+
+.logo-div{
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  /* width: 98%; */
+  /* height: 225px; */
+}
+
+nav a:hover, #logout-button:hover {
+  text-decoration:underline;
+}
 
 nav p {
   font-size: 18px;
@@ -23,13 +38,7 @@ nav a {
 }
 
 .mainlogo {
-  height: 100px;
-  padding-right: 20px;
-}
-
-.navicon {
-  height: 30px;
-  padding-right: 10px
+  height: 250px;
 }
 
 .logoutbtn {

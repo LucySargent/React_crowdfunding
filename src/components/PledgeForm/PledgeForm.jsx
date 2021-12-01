@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { useParams } from "react-router";
+import "./PledgeForm.css";
 
 const PledgeForm = () => {
-  const { id } = useParams()
+  const { id } = useParams();
   const [pledgeData, setPledgeData] = useState({
     amount: "0",
     comment: "",
@@ -37,10 +38,7 @@ const PledgeForm = () => {
   };
 
   return (
-    <div>
-      <div>
-        <h3 className="project-text">Make a pledge!</h3>
-      </div>
+    <div className="pledge-form">
       <form>
         <div>
           <input
@@ -69,15 +67,14 @@ const PledgeForm = () => {
             onChange={handleChange}
           />
         </div> */}
-        <button
-          className="submit-pledge-btn"
-          type="submit"
-          onClick={handlePledgeSubmit}
-        >
-          Submit Pledge
-        </button>
+        <div>
+          <button className="btn" type="submit" onClick={handlePledgeSubmit}>
+            Donate now
+          </button>
+        </div>
         <div>{submitMessage}</div>
       </form>
+      <h3>Recent donations</h3>
     </div>
   );
 };

@@ -8,15 +8,19 @@ function ProjectCard(props) {
 
   return (
     <div className="project-card">
+     
       {/* direct project cards to specific project pages */}
       <Link to={`/project/${projectData.id}`}>
-        <img src={projectData.image} alt="bee"/>
-        <h3 className="project-card-text">{projectData.title}</h3>
+        <img className="small-project-card-image" src={projectData.image} alt="bee"/>
+        <div className="project-title-text">
+        <p>{projectData.title}</p>
+      </div>
       </Link>
-        <h4 className="project-card-text">{projectData.description}</h4>
+        {/* <p>{projectData.description}</p> */}
       <Link to={`/project/${projectData.id}`}>
-        <h4 className="read-more-link">Read more...</h4>
+        {/* <p className="read-more-link">Read more...</p> */}
       </Link>
+      
     </div>
   );
 }

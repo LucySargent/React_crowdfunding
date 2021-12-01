@@ -1,0 +1,61 @@
+.big-container{
+  width: 50%;
+  margin-left: 400px;
+  margin-right: 200px;
+ display: flex;
+  flex-direction: row;
+ background-color:rgb(245, 245, 245);
+}
+
+.project-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pledge-container{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin-right: 30px;
+  }
+
+.single-project-image {
+  width: 75%;
+}
+
+.project-details {
+  padding-right: 1rem;
+  padding-left: 1rem;
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  column-gap: 10px;
+  row-gap: 10px;
+  text-decoration: none;
+  align-content: center;
+  justify-content: center;
+  /* border-style: solid; */
+  /* border-color: purple; */
+  /* background-color: rgb(238, 168, 38); */
+}
+
+.edit-buttons-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 300px;
+  margin-left: 15px;
+  margin-bottom: 30px;
+}
+
+form,
+input {
+  display: flex;
+  flex-direction: column;
+  font-family: "Quicksand", sans-serif;
+  margin-left: 30px;
+}
+
+

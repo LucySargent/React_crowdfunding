@@ -1,57 +1,23 @@
-.form-container {
-  padding: 10px;
+.main-container {
+  width: 90%;
   display: flex;
   flex-direction: column;
-  height: 400px;
-  background-image: url("../../honeycomb_light.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
+  align-items: center;
 }
 
-.login-form{
-    margin-top: 30px;
-}
-
-input {
-  align-content: center;
-  border-style: solid;
-  border-color: grey;
-  height: 25px;
-  width: 300px;
-  font-family: "Quicksand", sans-serif;
-  border-radius: 5px;
-  font-size: 16px;
-}
-
-.login-btn {
-  align-content: center;
-  border-style: solid;
-  border-color: rgb(105, 165, 130);
-  height: 40px;
-  width: 100px;
-  background-color: rgb(105, 165, 130);
-  font-family: "Quicksand", sans-serif;
-  margin-top: 30px;
-  border-radius: 5px;
-  font-size: 16px;
-  color: white;
-  font-weight:bold;
-  font-stretch:expanded;
-}
-
-.login-button-container {
+.login-form-container{
   display: flex;
-  justify-content: center;
-  margin-right: 30px;
-  /* border-style: solid; */
-  /* background-image: url("../../honeycomb_light.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center; */
+  flex-direction: column;
+  align-items: center;
+  /* border-style:solid; */
+  width: 50%;
+  padding-bottom: 50px;;
+  background: rgb(180,148,58);
+background: linear-gradient(212deg, rgba(180,148,58,1) 0%, rgba(253,179,29,0.6699054621848739) 0%, rgba(252,176,69,1) 100%);
+
 }
 
-.signup_message {
+.signup-message {
   margin-top: 20px;
   margin-bottom: 10px;
   display: flex;
@@ -60,8 +26,24 @@ input {
   height: 50px;
 }
 
-.signup_link {
+.signup-link {
   text-decoration: underline;
   font-weight: bolder;
-  color: rgb(105, 165, 130);
+  color: black;
 }
+
+input {
+  align-content: center;
+  
+  height: 25px;
+  width: 300px;
+  font-family: "Quicksand", sans-serif;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.login-button{
+  display:flex;
+  justify-content: center;
+}
+

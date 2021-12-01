@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
-import PledgeForm from "../components/PledgeForm/PledgeForm"
+import PledgeForm from "../components/PledgeForm/PledgeForm";
+import "./ProjectPage.css";
 
 function ProjectPage() {
   //starting state is object with empty array
@@ -67,28 +68,34 @@ function ProjectPage() {
 
   const ReadProject = () => {
     return (
-      <div className="project">
-        <h2 className="project_title" a>
-          {projectData.title}
-        </h2>
-        <img className="project_image" src={projectData.image} alt="bee" />
-        <h3 className="project_description">{`${projectData.description}`}</h3>
-        <div className="project-details">
-          <h4>{`Suburb: ${projectData.suburbs}`}</h4>
-          <h4>Created: {formattedDate}</h4>
-          <h4>{`Beehive goal: ${projectData.beehives}`}</h4>
-          <h4>{`Minimum: $${projectData.min_required}`}</h4>
-          <h4>{`Goal: $${projectData.goal}`}</h4>
-          <h4>{`Status: ${projectData.status}`}</h4>
+      <div className="big-container">
+        <div className="project-container">
+          <h2 a>{projectData.title}</h2>
+          <p>{`Suburb: ${projectData.suburbs}`}</p>
+          <p>Created: {formattedDate}</p>
+          <img
+            className="single-project-image"
+            src={projectData.image}
+            alt="bee"
+          />
+          <h4>{`${projectData.description}`}</h4>
+          <div className="project-details">
+            <p>{`Beehive target: ${projectData.beehives}`}</p>
+            <p>{`Goal: $${projectData.goal}`}</p>
+            {/* <p>{`Minimum: $${projectData.min_required}`}</p> */}
+            <p>{`Status: ${projectData.status}`}</p>
+          </div>
+          <div>
+            <progress value="30" max="100" />
+          </div>
         </div>
-        <div className="progress" ><progress value="30" max="100" /></div>
-        <PledgeForm />
-        <div className="container-pledges">
+        <div className="pledge-container">
+          <PledgeForm />
           {projectData?.pledges.map((pledgeData, key) => {
             return (
               <ul>
-                ${pledgeData.amount} "{pledgeData.comment}" - Supporter{" "}
-                {pledgeData.supporter}
+                Supporter {pledgeData.supporter} "{pledgeData.comment}" $
+                {pledgeData.amount}
               </ul>
             );
           })}
@@ -136,18 +143,18 @@ function ProjectPage() {
     }
   };
 
-
   return (
-    <div className="edit_project">
-      <div className="edit-button-container">
+    <div>
+      <div>
         {localStorage.getItem("token") && isEditing === false && (
           <button className="edit-btn" onClick={() => setIsEditing(true)}>
             Edit Project
           </button>
         )}
-      </div>
+     </div>
       {isEditing ? (
         <form onSubmit={handleSubmit}>
+          
           <div>
             <h3>Edit this project</h3>
             <label htmlFor="username">Title:</label>
@@ -214,15 +221,9 @@ function ProjectPage() {
           </div>
 
           <div className="edit-buttons-container">
-            <button className="btn" type="submit">
-              Update
-            </button>
-            <button className="btn" onClick={() => setIsEditing(false)}>
-              Cancel
-            </button>
-            <button className="btn" onClick={deleteProject}>
-              Delete
-            </button>
+            <button type="submit">Update</button>
+            <button onClick={() => setIsEditing(false)}>Cancel</button>
+            <button onClick={deleteProject}>Delete</button>
           </div>
         </form>
       ) : (

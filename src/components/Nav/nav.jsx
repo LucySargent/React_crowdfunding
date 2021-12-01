@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./nav.css";
-import otherlogo from "../../otherlogo.jpg"
-import navicon from "../../navicon.png"
+import beebay_logo from "../../beebay_logo.png"
+
 
 
 function Nav() {
@@ -18,17 +18,22 @@ const handleLogOut = () => {
 
 
   return (
-    <nav className="nav-container">
-      <div className="nav-login">
+    <div>
+    <nav className="nav-bar">
+      <div className="nav-links">
       {userToken ? <button className="logoutbtn" onClick={handleLogOut}>Logout</button> : <Link to="/login"><p>login</p></Link>}
       </div>
-      <div>
-        <Link to="/"><img className="mainlogo" src={ otherlogo } alt="test"/></Link>
+      <div className="nav-links">
+      <Link to="/login"><p>Start a Beebay Project</p></Link>
       </div>
-      <div>
-        <img className="navicon" src={ navicon } alt="test"/>
+      <div className="nav-links">
+      <Link to="/login"><p>Home</p></Link>
       </div>
     </nav>
+      <div className="logo-div">
+        <Link to="/"><img className="mainlogo" src={ beebay_logo } alt="test"/></Link>
+      </div>
+</div>
   );
 }
 
