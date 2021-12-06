@@ -1,7 +1,7 @@
 <h1>Beebay</h1>
 <p>Beebay is a crowdfunding app supporting bees! Beebay connects people who have space for beehives with local bee-keepers and people wanting to support the cost of setting up new hives. Site owners get a share of the honey, bee-keepers get to do what they love and our planet has more bees! Win, win, win.</p>
 
-[!Beebay](https://github.com/LucySargent/React_crowdfunding/blob/main/new_home.png)
+![Beebay](https://github.com/LucySargent/React_crowdfunding/blob/main/new_home.png)
 
 
 <h2>View</h2>
@@ -79,9 +79,6 @@ react-router-dom: ^6.0.2
 <li>Updating a project is limited to the project owner. Unauthorised users are redirected to an unauthorised page.</li>
 <li>Deleting a project is limited to the project owner and Admin. Unauthorised users are redirected to an unauthorised page.</li>
     </ul>
-
-![Home / Create User / Pledges](/screenshots/home_create_unauthorised.jpg "")
-![Login / Sign Up / Unauthorised](/screenshots/login_signup_unauthorised.jpg "")
 
 <h2>Known Bugs</h2>
 <ul>
