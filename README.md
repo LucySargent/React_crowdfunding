@@ -3,10 +3,12 @@
 
 ![Beebay](https://github.com/LucySargent/React_crowdfunding/blob/main/new_home.png)
 
-<h3>Project page with pledges</h3>
+<h4>Project with pledge form and recent pledges</h4>
+
 ![Beebay](https://github.com/LucySargent/React_crowdfunding/blob/main/project_page.jpg)
 
-<h3>Create project form</h3>
+<h4>Create project form</h4>
+
 ![Beebay](https://github.com/LucySargent/React_crowdfunding/blob/main/create_project_form.jpg)
 
 
