@@ -100,7 +100,7 @@ react-router-dom: ^6.0.2
  
 ![database_schema](https://github.com/LucySargent/React_crowdfunding/blob/main/database_schema.jpg)
  
- <h2>Colours Reference</h2>
+ <h2>Colour Guide</h2>
  <p>Body: rgb(245, 245, 245)</p>
  <p>h1, h2, h3, h4: rgb(0,0,0)</p>
  <p>Buttons: rgb(246, 170, 7)</p>
