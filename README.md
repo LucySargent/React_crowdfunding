@@ -1,6 +1,9 @@
 <h1>Beebay</h1>
 <p>Beebay is a crowdfunding app supporting bees! Beebay connects people who have space for beehives with local bee-keepers and people wanting to support the cost of setting up new hives. Site owners get a share of the honey, bee-keepers get to do what they love and our planet has more bees! Win, win, win.</p>
 
+[![Beebay](/screenshots/new_home.png. "")
+
+
 <h2>View</h2>
 <p><em>Note: View in mobile view - iphone 6/7/8 Plus</em></p>
 <p>Git Repo: https://github.com/LucySargent/React_crowdfunding</p>
@@ -90,5 +93,12 @@ react-router-dom: ^6.0.2
  <h3>DB Schema</h3>
  Initial DB design
  <p>![database_schema](/screenshots/database_schema.jpg "")</p>
+ 
+ <h2>Colours Reference</h2>
+ <p>Body: rgb(245, 245, 245)</p>
+ <p>h1, h2, h3, h4: rgb(0,0,0)</p>
+ <p>Buttons: rgb(246, 170, 7)</p>
+ <p>Box-shadow: rgb(151, 148, 148)</p>
+ 
     
     
