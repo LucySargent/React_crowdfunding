@@ -3,6 +3,12 @@
 
 ![Beebay](https://github.com/LucySargent/React_crowdfunding/blob/main/new_home.png)
 
+<h3>Project page with pledges</h3>
+![Beebay](https://github.com/LucySargent/React_crowdfunding/blob/main/project_page.jpg)
+
+<h3>Create project form</h3>
+![Beebay](https://github.com/LucySargent/React_crowdfunding/blob/main/create_project_form.jpg)
+
 
 
 <h2>View</h2>
