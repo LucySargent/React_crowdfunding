@@ -14,9 +14,8 @@
 
 
 <h2>View</h2>
-<p><em>Note: View in mobile view - iphone 6/7/8 Plus</em></p>
 <p>Git Repo: https://github.com/LucySargent/React_crowdfunding</p>
-<p>Deployed API: https://pure-cliffs-12549.herokuapp.com (with Heroku Postgres DB attached)</p>
+<p>Deployed API: https://pure-cliffs-12549.herokuapp.com (with Heroku Postgres DB attached)NEEDS UPDATING</p>
 
 <h4>Run locally:</h4>
 <p>Run backend from new terminal:</p>
@@ -97,8 +96,9 @@ react-router-dom: ^6.0.2
     </ul>
     
  <h3>DB Schema</h3>
- Initial DB design
- <p>![database_schema](/screenshots/database_schema.jpg "")</p>
+
+ 
+![database_schema](https://github.com/LucySargent/React_crowdfunding/blob/main/database_schema.jpg)
  
  <h2>Colours Reference</h2>
  <p>Body: rgb(245, 245, 245)</p>
