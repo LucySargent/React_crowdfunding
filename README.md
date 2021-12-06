@@ -4,6 +4,7 @@
 ![Beebay](https://github.com/LucySargent/React_crowdfunding/blob/main/new_home.png)
 
 
+
 <h2>View</h2>
 <p><em>Note: View in mobile view - iphone 6/7/8 Plus</em></p>
 <p>Git Repo: https://github.com/LucySargent/React_crowdfunding</p>
