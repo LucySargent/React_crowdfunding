@@ -1,7 +1,7 @@
 <h1>Beebay</h1>
 <p>Beebay is a crowdfunding app supporting bees! Beebay connects people who have space for beehives with local bee-keepers and people wanting to support the cost of setting up new hives. Site owners get a share of the honey, bee-keepers get to do what they love and our planet has more bees! Win, win, win.</p>
 
-[![Beebay](/screenshots/new_home.png. "")
+[!Beebay](https://github.com/LucySargent/React_crowdfunding/blob/main/new_home.png)
 
 
 <h2>View</h2>
