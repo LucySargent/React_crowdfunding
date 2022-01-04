@@ -64,6 +64,7 @@ function ProjectPage() {
       setError(err.message);
     }
     // setIsEditing(false);
+    history.push("/");
   };
 
   const ReadProject = () => {
@@ -72,33 +73,41 @@ function ProjectPage() {
         <div className="project-container">
           <h2 a>{projectData.title}</h2>
           <p>{`Suburb: ${projectData.suburbs}`}</p>
-          <p>Created: {formattedDate}</p>
           <img
             className="single-project-image"
             src={projectData.image}
             alt="bee"
           />
-          <h4>{`${projectData.description}`}</h4>
+          <div className="description">
+            <p>{`${projectData.description}`}</p>
+          </div>
+          {/* <p>Created: {formattedDate}</p> */}
           <div className="project-details">
             <p>{`Beehive target: ${projectData.beehives}`}</p>
             <p>{`Goal: $${projectData.goal}`}</p>
-            {/* <p>{`Minimum: $${projectData.min_required}`}</p> */}
             <p>{`Status: ${projectData.status}`}</p>
           </div>
           <div>
             <progress value="30" max="100" />
           </div>
+          <p>Created: {formattedDate}</p>
+          <p>Project_ID: {projectData.id}</p>
         </div>
         <div className="pledge-container">
           <PledgeForm />
-          {projectData?.pledges.map((pledgeData, key) => {
-            return (
-              <ul>
-                Supporter {pledgeData.supporter} "{pledgeData.comment}" $
-                {pledgeData.amount}
-              </ul>
-            );
-          })}
+          <div>
+            <div className="pledges">
+              <h3 className="recent">Recent donations</h3>
+              {projectData?.pledges.map((pledgeData, key) => {
+                return (
+                  <ul>
+                    Supporter {pledgeData.supporter} "{pledgeData.comment}" $
+                    {pledgeData.amount}
+                  </ul>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </div>
     );
@@ -145,18 +154,20 @@ function ProjectPage() {
 
   return (
     <div>
-      <div>
+      <div className="edit-project-div">
         {localStorage.getItem("token") && isEditing === false && (
           <button className="edit-btn" onClick={() => setIsEditing(true)}>
             Edit Project
           </button>
         )}
-     </div>
+      </div>
       {isEditing ? (
         <form onSubmit={handleSubmit}>
-          
-          <div>
-            <h3>Edit this project</h3>
+          <div className="edit-project-container">
+            <div>
+            <h3>Have your project details changed? Update them here!</h3>
+            </div>
+            <div>
             <label htmlFor="username">Title:</label>
             <input
               value={projectData.title}
@@ -166,9 +177,9 @@ function ProjectPage() {
               onChange={handleChange}
             />
           </div>
-          <div>
+          <div className="edit-move">
             <label htmlFor="username">Description:</label>
-            <input
+            <input 
               value={projectData.description}
               name="description"
               type="text"
@@ -177,18 +188,49 @@ function ProjectPage() {
               onChange={handleChange}
             />
           </div>
-          <div>
-            <label htmlFor="username">Suburb:</label>
-            <input
-              value={projectData.suburbs}
-              name="suburbs"
-              type="text"
-              id="suburbs"
-              placeholder="Suburb"
-              onChange={handleChange}
-            />
-          </div>
-          <div>
+          <div className="edit-suburb">
+          <label htmlFor="username">Suburb:</label>
+          <select
+          value={projectData.suburbs}
+            name="suburbs"
+            type="text"
+            id="suburbs"
+            placeholder="Select suburb"
+            onChange={handleChange}
+          >
+            <option value="">Please select a suburb</option>
+            <option value="ANNERLEY">ANNERLEY</option>
+            <option value="ASPLEY">ASPLEY</option>
+            <option value="BANYO">BANYO</option>
+            <option value="BOONDALL">BOONDALL</option>
+            <option value="BRISBANE CITY">BRISBANE CITY</option>
+            <option value="CHELMER">CHELMER</option>
+            <option value="DARRA">DARRA</option>
+            <option value="ENOGGERA">ENOGGERA</option>
+            <option value="FERNY GROVE">FERNY GROVE</option>
+            <option value="FIG TREE POCKET">FIG TREE POCKET</option>
+            <option value="GREENSLOPES">GREENSLOPES</option>
+            <option value="HAWTHORNE">HAWTHORNE</option>
+            <option value="INALA">INALA</option>
+            <option value="JAMBOREE HEIGHTS">JAMBOREE HEIGHTS</option>
+            <option value="KARANA DOWNS">KARANA DOWNS</option>
+            <option value="LAKE MANCHESTER">LAKE MANCHESTER</option>
+            <option value="MOOROOKA">MOOROOKA</option>
+            <option value="NUNDAH">NUNDAH</option>
+            <option value="OXLEY">OXLEY</option>
+            <option value="PORT OF BRISBANE">PORT OF BRISBANE</option>
+            <option value="RICHLANDS">RICHLANDS</option>
+            <option value="SANDGATE">SANDGATE</option>
+            <option value="SUNNYBANK">SUNNYBANK</option>
+            <option value="TENNYSON">TENNYSON</option>
+            <option value="TOOWONG">TOOWONG</option>
+            <option value="THE GAP">THE GAP</option>
+            <option value="WACOL">WACOL</option>
+            <option value="YERONGA">YERONGA</option>
+            <option value="ZILLMERE">ZILLMERE</option>
+          </select>
+        </div>
+          <div className="edit-beehives">
             <label htmlFor="username">Beehives:</label>
             <input
               value={projectData.beehives}
@@ -199,7 +241,7 @@ function ProjectPage() {
               onChange={handleChange}
             />
           </div>
-          <div>
+          <div className="edit-image"> 
             <label htmlFor="username">Image:</label>
             <input
               value={projectData.image}
@@ -209,7 +251,7 @@ function ProjectPage() {
               onChange={handleChange}
             />
           </div>
-          <div>
+          <div className="edit-isopen">
             <label htmlFor="username">Is_open:</label>
             <input
               value={projectData.is_open}
@@ -219,12 +261,13 @@ function ProjectPage() {
               onChange={handleChange}
             />
           </div>
-
           <div className="edit-buttons-container">
             <button type="submit">Update</button>
             <button onClick={() => setIsEditing(false)}>Cancel</button>
             <button onClick={deleteProject}>Delete</button>
           </div>
+          </div>
+        
         </form>
       ) : (
         <ReadProject />

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import "./ProjectForm.css";
 
 const ProjectForm = () => {
@@ -7,13 +8,15 @@ const ProjectForm = () => {
     description: "",
     suburbs: "",
     beehives: "",
-    image: "",
+    image: "https://www.teahub.io/photos/full/85-854286_honey-bee.jpg",
     is_open: "true",
-    date_created: "2021-11-05T00:28:23.382748+10:00",
+    date_created: new Date().toISOString(),
   });
 
   const [errors, setErrors] = useState([]);
   const [message, setMessage] = useState("");
+
+  const history = useHistory();
 
   //could call setProjectData and put this functionality inline and not have handleChange
   const handleChange = (e) => {
@@ -54,51 +57,46 @@ const ProjectForm = () => {
     e.preventDefault();
     checkForErrors();
     if (errors.length > 0) {
-      //early return
+      console.log("we have errors");
       return;
     }
 
     const token = window.localStorage.getItem("token");
 
-    /* 
-      myHeaders.append('Content-Type', 'application/json'); 
-      since it's a get request you don't need to specify your content-type
-    */
-
-    fetch(
-      `${process.env.REACT_APP_API_URL}projects/`,
-      //this is an options object - to say we're posting
-      {
-        method: "POST",
-        headers: {
-          Authorization: `Token ${token}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(projectData),
-      }
-    )
-      //fetch returns a promise - think "after fetch, I can add a .then and do more things!"
-      //could use async await here
+    fetch(`${process.env.REACT_APP_API_URL}projects/`, {
+      method: "POST",
+      headers: {
+        Authorization: `Token ${token}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(projectData),
+    })
       .then((response) => {
-        // console.log("we're posting a project");
-        // console.log(response);
-        // console.log(projectData)
-        setMessage("Your Beebay Project has been created.");
+        console.log("we're posting a project");
+        console.log(response);
+        console.log("status text:", response.statusText);
+        console.log(projectData);
+        
+        alert("Your Beebay Project has been created.");
         // if (response.ok) {
         //   throw Error("please complete all fields");
         // }
         // console.log(response.json);
         return response.json();
-      });
-    //   .then((results) => console.log(results))
-    //   .catch((error) => console.log(error.message));
+      })
+      .then((response) => {
+        // history.push("/")
+        window.location = `${window.location.origin}/`;
+      })
+      .then((results) => console.log(results))
+      .catch((error) => console.log(error.message));
     // console.log(projectData);
   };
 
   return (
     <div>
-      <h3 className="head">Create your Beebay project!</h3>
-      <form className="project-form-container">
+      <form className="main-container">
+        <h3>Create your Beebay project!</h3>
         <div>
           <input
             name="title"
@@ -118,13 +116,44 @@ const ProjectForm = () => {
           />
         </div>
         <div>
-          <input
+          <select
             name="suburbs"
             type="text"
             id="suburbs"
-            placeholder="Enter your suburb"
+            placeholder="Select suburb"
             onChange={handleChange}
-          />
+          >
+            <option value="">Please select a suburb</option>
+            <option value="ANNERLEY">ANNERLEY</option>
+            <option value="ASPLEY">ASPLEY</option>
+            <option value="BANYO">BANYO</option>
+            <option value="BOONDALL">BOONDALL</option>
+            <option value="BRISBANE CITY">BRISBANE CITY</option>
+            <option value="CHELMER">CHELMER</option>
+            <option value="DARRA">DARRA</option>
+            <option value="ENOGGERA">ENOGGERA</option>
+            <option value="FERNY GROVE">FERNY GROVE</option>
+            <option value="FIG TREE POCKET">FIG TREE POCKET</option>
+            <option value="GREENSLOPES">GREENSLOPES</option>
+            <option value="HAWTHORNE">HAWTHORNE</option>
+            <option value="INALA">INALA</option>
+            <option value="JAMBOREE HEIGHTS">JAMBOREE HEIGHTS</option>
+            <option value="KARANA DOWNS">KARANA DOWNS</option>
+            <option value="LAKE MANCHESTER">LAKE MANCHESTER</option>
+            <option value="MOOROOKA">MOOROOKA</option>
+            <option value="NUNDAH">NUNDAH</option>
+            <option value="OXLEY">OXLEY</option>
+            <option value="PORT OF BRISBANE">PORT OF BRISBANE</option>
+            <option value="RICHLANDS">RICHLANDS</option>
+            <option value="SANDGATE">SANDGATE</option>
+            <option value="SUNNYBANK">SUNNYBANK</option>
+            <option value="TENNYSON">TENNYSON</option>
+            <option value="TOOWONG">TOOWONG</option>
+            <option value="THE GAP">THE GAP</option>
+            <option value="WACOL">WACOL</option>
+            <option value="YERONGA">YERONGA</option>
+            <option value="ZILLMERE">ZILLMERE</option>
+          </select>
         </div>
         <div>
           <input
@@ -132,15 +161,6 @@ const ProjectForm = () => {
             type="text"
             id="beehives"
             placeholder="Number of beehives"
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <input
-            name="image"
-            type="text"
-            id="image"
-            placeholder="Add an image"
             onChange={handleChange}
           />
         </div>

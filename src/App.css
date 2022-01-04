@@ -6,10 +6,15 @@ body {
 
 p{
   color: black;
+  
 }
 
 ul {
   font-family: "Quicksand", sans-serif;
   list-style-image: url("./marker.jpg");
   font-size:16px; 
+}
+
+h3, h4 {
+  color: black;
 }

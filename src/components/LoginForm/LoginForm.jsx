@@ -30,6 +30,7 @@ const LoginForm = () => {
         body: JSON.stringify(credentials),
       }
     );
+    console.log("login form POST response object: ", response);
     return response.json();
   };
 
@@ -53,8 +54,33 @@ const LoginForm = () => {
 
   return (
     <div className="main-container">
-    <div className="login-form-container">
-      <div className="signup-message">
+      <div>
+        <h3>
+          Login to Beebay
+        </h3>
+      </div>
+      <form>
+        <div>
+        <input
+          type="text"
+          id="username"
+          placeholder="Username"
+          onChange={handleChange}
+        />
+        </div>
+        <input
+          type="password"
+          id="password"
+          placeholder="Password"
+          onChange={handleChange}
+        />
+        <div>
+          <button type="submit" onClick={handleSubmit}>
+            Login
+          </button>
+        </div>
+      </form>
+      <div className="sign-up-message">
         <h3>
           Don't have a Beebay account?{" "}
           <Link className="signup-link" to="/users/">
@@ -62,26 +88,6 @@ const LoginForm = () => {
           </Link>
         </h3>
       </div>
-      <form>
-        <input
-          type="text"
-          id="username"
-          placeholder="Username"
-          onChange={handleChange}
-        />
-        <input
-          type="password"
-          id="password"
-          placeholder="Password"
-          onChange={handleChange}
-        />
-        <div className="login-button">
-        <button className="login-btn" type="submit" onClick={handleSubmit}>
-          Login
-        </button>
-        </div>
-      </form>
-    </div>
     </div>
   );
 };

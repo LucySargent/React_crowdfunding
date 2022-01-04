@@ -32,7 +32,7 @@ const PledgeForm = () => {
       },
       body: JSON.stringify(pledgeData),
     }).then((response) => {
-      setSubmitMessage("Thank you for supporting this project.");
+      setSubmitMessage("Thank you for supporting this project");
       return response.json();
     });
   };
@@ -40,6 +40,11 @@ const PledgeForm = () => {
   return (
     <div className="pledge-form">
       <form>
+      <div>
+          <button className="btn" type="submit" onClick={handlePledgeSubmit}>
+            Donate now
+          </button>
+        </div>
         <div>
           <input
             name="amount"
@@ -58,23 +63,9 @@ const PledgeForm = () => {
             onChange={handleChange}
           />
         </div>
-        {/* <div>
-          <input
-            name="project_id"
-            type="text"
-            id="project_id"
-            placeholder="Project ID"
-            onChange={handleChange}
-          />
-        </div> */}
-        <div>
-          <button className="btn" type="submit" onClick={handlePledgeSubmit}>
-            Donate now
-          </button>
-        </div>
-        <div>{submitMessage}</div>
+        
       </form>
-      <h3>Recent donations</h3>
+        <div className="thankyou-message">{submitMessage}</div>
     </div>
   );
 };

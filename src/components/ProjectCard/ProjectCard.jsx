@@ -13,13 +13,10 @@ function ProjectCard(props) {
       <Link to={`/project/${projectData.id}`}>
         <img className="small-project-card-image" src={projectData.image} alt="bee"/>
         <div className="project-title-text">
-        <p>{projectData.title}</p>
+        <h4>{projectData.title}</h4>
       </div>
       </Link>
-        {/* <p>{projectData.description}</p> */}
-      <Link to={`/project/${projectData.id}`}>
-        {/* <p className="read-more-link">Read more...</p> */}
-      </Link>
+      <Link to={`/project/${projectData.id}`}></Link>
       
     </div>
   );

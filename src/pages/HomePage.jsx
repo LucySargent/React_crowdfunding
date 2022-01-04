@@ -23,20 +23,25 @@ function HomePage() {
       });
   }, []);
 
+  // const sumHives = () => 
+  // {
+  //   console.log()
+  // }
+  
+// sumHives()
+
   return (
     <div>
       <div className="banner">
         <div className="message">
-          <h3 className="message-head">Beebay is...</h3>
+          <h3 className="message-head">Do you have space for a beehive? Are you a bee-keeper? Can you donate towards a project?</h3>
           <p className="message-text">
-          Beebay connects people who have space for beehives with local bee-keepers and people wanting to support the cost of setting up new hives. Site owners get a share of the honey, bee-keepers get to do what they love and our planet has more bees! Win, win, win...!
-          </p>
+          Beebay connects people, spaces, beekeepers and communities bringing bees to Brisbane!. Site owners enjoy a share of the honey and a flourishing garden, bee-keepers get to do what they love and our planet has more bees! </p>
         </div>
         <div className="stats">
-          <p>STATS HERE</p>
-          
-          <p>STATS HERE</p>
-          <p>STATS HERE</p>
+          <p>Hives: 100</p>
+          <p>Bees: 1M</p>
+          <p>Sites: 50</p>
         </div>
       </div>
       <div id="project-list">

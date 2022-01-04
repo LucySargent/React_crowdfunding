@@ -19,20 +19,20 @@ const handleLogOut = () => {
 
   return (
     <div>
+      <div className="logo-div">
+        <Link to="/"><img className="mainlogo" src={ beebay_logo } alt="test"/></Link>
+      </div>
     <nav className="nav-bar">
       <div className="nav-links">
       {userToken ? <button className="logoutbtn" onClick={handleLogOut}>Logout</button> : <Link to="/login"><p>login</p></Link>}
       </div>
       <div className="nav-links">
-      <Link to="/login"><p>Start a Beebay Project</p></Link>
+      <Link to="/projects/"><p>Start a Beebay Project</p></Link>
       </div>
       <div className="nav-links">
-      <Link to="/login"><p>Home</p></Link>
+      <Link to="/"><p>Home</p></Link>
       </div>
-    </nav>
-      <div className="logo-div">
-        <Link to="/"><img className="mainlogo" src={ beebay_logo } alt="test"/></Link>
-      </div>
+    </nav>      
 </div>
   );
 }

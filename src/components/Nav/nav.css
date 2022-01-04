@@ -1,40 +1,37 @@
 .nav-bar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 1%;
-    /* border-style: solid; */
-    /* background-color: white; */
-   
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(34, 34, 33);
+}
 
-.nav-links{
+.nav-links {
   /* border-style: solid; */
-  font-size: .7em;
+  font-size: 0.7em;
   text-transform: uppercase;
   padding-right: 4%;
 }
 
-.logo-div{
+.logo-div {
   display: flex;
   justify-content: center;
   background-color: white;
-  /* width: 98%; */
-  /* height: 225px; */
 }
 
-nav a:hover, #logout-button:hover {
-  text-decoration:underline;
+nav a:hover,
+.logoutbtn:hover {
+  text-decoration: underline;
 }
 
 nav p {
   font-size: 18px;
+  color: white;
 }
 
 nav a {
-    color: black;
-    font-size: 36px;
-    text-decoration: none;
+  color: white;
+  font-size: 36px;
+  text-decoration: none;
 }
 
 .mainlogo {
@@ -42,8 +39,13 @@ nav a {
 }
 
 .logoutbtn {
-  background-color: white;
+  background-color: rgb(34, 34, 33);
   border: none;
-  font-family: "Quicksand", sans-serif;
-  font-size: 20px;
+  text-transform: uppercase;
+  width: 60px;
+  font-size: 18px;
+  /* padding-right: 30px; */
+  padding-bottom: 5px;
+  padding-right: 80px;
+  color: white;
 }
